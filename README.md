@@ -1,42 +1,51 @@
-# yoosuf/docit
+# Docit for Laravel
 
-Reusable Laravel package for document generation from Word/PDF templates.
+Production-ready document generation for Laravel from DOCX and fillable PDF templates.
 
-## Features
+Docit helps teams ship contracts, invoices, certificates, and operational documents with a reliable API-first workflow.
+
+## Why teams adopt Docit
+
+- Ship document automation without building your own fragile rendering pipeline.
+- Keep requests safe with idempotency for retried API calls.
+- Run generation sync or async with queue retries/backoff controls.
+- Inspect templates before production use to catch placeholder and field issues early.
+- Persist generation metadata for auditability and troubleshooting.
+
+## Core capabilities
 
 - Convention-based template discovery
 - DOCX rendering with PhpWord TemplateProcessor
-- PDF AcroForm filling with pdftk
-- DOC and DOCX conversion via LibreOffice
-- Metadata persistence in SQLite/MySQL/PostgreSQL via Laravel models
-- Idempotency keys
-- Queue-based async generation with configurable retries/backoff
-- Template inspection endpoint support (placeholders, warnings, errors)
+- Fillable PDF AcroForm rendering with pdftk
+- DOC and DOCX conversion with LibreOffice
+- Template inspection endpoint with placeholders, warnings, and errors
+- Idempotency key support for create requests
+- Queue-backed async generation with configurable retry policy
+- Metadata persistence with Laravel models
 
-## Install
+## Installation
 
 ```bash
 composer require yoosuf/docit
 ```
 
-## Publish
+## Quick start (5 minutes)
 
 ```bash
 php artisan vendor:publish --tag=document-config
 php artisan vendor:publish --tag=document-migrations
-```
-
-## Migrate
-
-```bash
 php artisan migrate
 ```
 
-## Config
+Store templates in your configured templates directory and call your document endpoint.
 
-Main config file is `config/document.php`.
+## Configuration
 
-Important env vars:
+Primary config file:
+
+- `config/document.php`
+
+Important environment variables:
 
 - `DOCUMENT_API_PREFIX`
 - `DOCUMENT_LOAD_ROUTES`
@@ -52,8 +61,17 @@ Important env vars:
 - `DOCUMENT_QUEUE_MAX_EXCEPTIONS`
 - `DOCUMENT_QUEUE_TIMEOUT_SECONDS`
 
-## Notes
+## Positioning statement
 
-- By default the package auto-loads routes under `DOCUMENT_API_PREFIX`.
-- Set `DOCUMENT_LOAD_ROUTES=false` to wire routes manually.
-- Package throws domain exceptions that host apps should map to consistent API error envelopes.
+If your team is generating operational documents inside Laravel and needs reliability, traceability, and queue-safe retries, Docit is purpose-built for that workflow.
+
+## Contributing
+
+Issues and pull requests are welcome.
+
+- Issues: https://github.com/yoosuf/dockit/issues
+- Source: https://github.com/yoosuf/dockit
+
+## License
+
+MIT

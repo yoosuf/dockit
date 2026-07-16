@@ -1,13 +1,28 @@
 {
   "name": "yoosuf/docit",
-  "description": "Reusable Laravel package for document generation from Word and PDF templates with idempotency and queue support.",
+  "description": "Laravel package for production document generation from DOCX and PDF templates with idempotency, queues, and template inspection.",
   "type": "library",
+  "keywords": [
+    "laravel",
+    "document-generation",
+    "pdf",
+    "docx",
+    "templating",
+    "idempotency",
+    "queue",
+    "api"
+  ],
   "license": "MIT",
+  "homepage": "https://github.com/yoosuf/dockit",
   "authors": [
     {
-      "name": "Laradoc Maintainers"
+      "name": "Yoosuf"
     }
   ],
+  "support": {
+    "issues": "https://github.com/yoosuf/dockit/issues",
+    "source": "https://github.com/yoosuf/dockit"
+  },
   "require": {
     "php": "^8.1",
     "illuminate/support": "^10.0|^11.0|^12.0",
